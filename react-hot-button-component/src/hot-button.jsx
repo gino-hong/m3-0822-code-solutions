@@ -12,49 +12,25 @@ export default class HotButton extends React.Component {
   }
 
   render() {
+    let buttonColor = '';
     if (this.state.timesClicked >= 18) {
-      return (
-        <button onClick={this.handleClick} className='white'>
-          Hot Button
-        </button>
-      );
+      buttonColor = 'white';
     } else if (this.state.timesClicked >= 15) {
-      return (
-        <button onClick={this.handleClick} className='yellow'>
-          Hot Button
-        </button>
-      );
+      buttonColor = 'yellow';
     } else if (this.state.timesClicked >= 12) {
-      return (
-        <button onClick={this.handleClick} className='orange'>
-          Hot Button
-        </button>
-      );
+      buttonColor = 'orange';
     } else if (this.state.timesClicked >= 9) {
-      return (
-        <button onClick={this.handleClick} className='red'>
-          Hot Button
-        </button>
-      );
+      buttonColor = 'red';
     } else if (this.state.timesClicked >= 6) {
-      return (
-        <button onClick={this.handleClick} className='purple'>
-          Hot Button
-        </button>
-      );
+      buttonColor = 'purple';
     } else if (this.state.timesClicked >= 3) {
-      return (
-        <button onClick={this.handleClick} className='blue'>
-          Hot Button
-        </button>
-      );
-    } else {
-      return (
-      <button onClick={this.handleClick}>
+      buttonColor = 'blue';
+    }
+    return (
+      <button onClick={this.handleClick} className={buttonColor}>
         Hot Button
       </button>
-      );
-    }
+    );
 
   }
 }
