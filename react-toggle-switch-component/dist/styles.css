@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 48px;
+}
+
+.box {
+  display: flex;
+}
+
+.background {
+  width: 360px;
+  height: 180px;
+  border: solid 2px black;
+  border-radius: 30%;
+}
+
+.switch {
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 50%;
+}
+
+.switch-off {
+  position: relative;
+  left: 0;
+}
+
+.switch-on {
+  position: relative;
+  left: 50%;
+}
+
+.background-off {
+  background-color: lightslategray;
+}
+
+.background-on {
+  background-color: lightgreen;
+}
+
+.label {
+  width: 360px;
+  height: 180px;
+  text-align: center;
+}
