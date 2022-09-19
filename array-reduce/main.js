@@ -33,5 +33,5 @@ const bal = (balance, transaction) => {
 const balance = account.reduce(bal, 0);
 console.log('balance: ', balance);
 
-const composite = traits.reduce((target, source) => Object.assign(target, source));
+const composite = traits.reduce((target, source) => Object.assign(target, source), {});
 console.log('composite: ', composite);
