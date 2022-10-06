@@ -1,0 +1,31 @@
+User can sign up.
+  When the user clicks 'Sign Up' on the navbar or 'Register now' on the bottom left,
+  it will bring the user to the hashed URL path '#sign-up' where the user can enter a username and password.
+  Both the username and the password are tracked by the state object when there are any changes in their respective input fields.
+  Once the user has finished typing a username and password and clicks the blue register button,
+  a request object is created. The body of the request object is the stringified state object containing the username and the password.
+  The method of the request object is specified as a 'POST' method.
+  Next, the fetch method is called with '/api/auth/sign-up' and the request object as its arguments.
+  This data will be sent to the server. The server will check the username and password from the request object.
+  If there any errors during the check, an error will be returned to the client.
+  If there are no errors, the password will be hashed and stored into the database along with the username.
+  Once this is completed, a 201 status code is sent back to the client. Then, the hash router will update and the user will return to the sign in page.
+
+User can sign in.
+  Once the user has registered, the user can enter their credentials and login from the sign in page.
+  Similar to signing up, the state object is updated as the input values change for the username and the password.
+  Once the user submits their login information, a request object is created.
+  The body of the request object will be the stringified state object containing the username and the password.
+  The request object specifies a 'POST' method. Then, the fetch object is called with '/api/auth/sign-in' and the request object as its arguments.
+  The server will check that it received a valid username. If it did not, it will return an error to the client.
+  Next, if the username exists in the database, the server will check the password with the hashed password in the system using the argon2.verify method.
+  If there is no match, an error will be returned to the client. If it does match, a user payload and token is created and passed into the onSignIn method.
+  The handleSignIn method will run as a result and set a token under 'react-context-jwt'.
+  Once the state is set, the user will be taken to the home page.
+
+User can stay signed in (even if they refresh the page).
+  When the page is reloaded, the client will check for a token in the localStorage. If a token is found, the state is set with the token again, and the page refreshes to where it was.
+
+User can sign out.
+  When the user clicks the sign out button, the handleSignOut method is called. This will remove the 'react-context-jwt' item from the localStorage and set the user to null in the state object.
+  This will cause the page to refresh and bring the user to the sign in page.
